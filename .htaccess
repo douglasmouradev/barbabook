@@ -1,0 +1,15 @@
+# BarbaBook - Apache (opcional)
+# Protege pastas sensíveis e define index
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+</IfModule>
+
+# Bloquear acesso direto a config e database
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# Opcional: redirecionar raiz para index.php se necessário
+# DirectoryIndex index.php

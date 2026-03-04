@@ -1,0 +1,564 @@
+/* BarbaBook - tdesksolutions.com.br */
+
+:root {
+  --bg: #0f0f0f;
+  --bg-card: #1a1a1a;
+  --bg-card-hover: #222;
+  --text: #e8e6e3;
+  --text-muted: #9a9691;
+  --accent-barbeiro: #c9a227;
+  --accent-barbeiro-soft: rgba(201, 162, 39, 0.15);
+  --accent-nails: #d4738a;
+  --accent-nails-soft: rgba(212, 115, 138, 0.15);
+  --border: #2d2d2d;
+  --success: #4a9b6f;
+  --error: #c75c5c;
+  --radius: 12px;
+  --font-head: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 0 4rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logo:hover {
+  color: var(--accent-barbeiro);
+}
+
+.nav-main {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-main a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-main a:hover {
+  color: var(--text);
+}
+
+.nav-login {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.nav-login:hover {
+  border-color: var(--accent-barbeiro);
+}
+
+body.modality-barbeiro .nav-main a[href*="barbeiro"] {
+  color: var(--accent-barbeiro);
+}
+
+body.modality-nails .nav-main a[href*="nails"] {
+  color: var(--accent-nails);
+}
+
+/* Hero / Choice */
+.hero.choice-section {
+  padding: 3rem 0 4rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  margin: 0 0 2.5rem;
+  font-size: 1.1rem;
+}
+
+.modality-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.modality-card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.modality-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.modality-barbeiro {
+  border-color: rgba(201, 162, 39, 0.35);
+}
+
+.modality-barbeiro:hover {
+  border-color: var(--accent-barbeiro);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.12);
+}
+
+.modality-nails {
+  border-color: rgba(212, 115, 138, 0.35);
+}
+
+.modality-nails:hover {
+  border-color: var(--accent-nails);
+  box-shadow: 0 8px 24px rgba(212, 115, 138, 0.12);
+}
+
+.modality-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.modality-card h2 {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.modality-card p {
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.modality-cta {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.modality-barbeiro .modality-cta {
+  color: var(--accent-barbeiro);
+}
+
+.modality-nails .modality-cta {
+  color: var(--accent-nails);
+}
+
+/* Agendamentos page */
+.agendamentos-page .page-title {
+  font-family: var(--font-head);
+  font-size: 1.75rem;
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+}
+
+.agendamentos-page .page-desc {
+  color: var(--text-muted);
+  margin: 0 0 1.75rem;
+}
+
+body.modality-barbeiro .agendamentos-page .page-title { color: var(--accent-barbeiro); }
+body.modality-nails .agendamentos-page .page-title { color: var(--accent-nails); }
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.card h2 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  margin: 0 0 1.25rem;
+  font-weight: 600;
+}
+
+/* Forms */
+.form-agendamento .form-group {
+  margin-bottom: 1rem;
+}
+
+.form-agendamento label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.form-agendamento input,
+.form-agendamento select,
+.form-agendamento textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Data e hora: destacar ícone do calendário/relógio e área clicável */
+.form-agendamento input[type="date"],
+.form-agendamento input[type="time"] {
+  cursor: pointer;
+  min-height: 2.5rem;
+}
+
+.form-agendamento input[type="date"]::-webkit-calendar-picker-indicator,
+.form-agendamento input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 0.25rem;
+}
+
+.form-agendamento input[type="date"]::-webkit-datetime-edit,
+.form-agendamento input[type="time"]::-webkit-datetime-edit {
+  padding: 0;
+}
+
+/* Placeholder do telefone */
+.form-agendamento input[type="tel"]::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.form-agendamento input:focus,
+.form-agendamento select:focus,
+.form-agendamento textarea:focus {
+  outline: none;
+  border-color: var(--accent-barbeiro);
+}
+
+body.modality-nails .form-agendamento input:focus,
+body.modality-nails .form-agendamento select:focus,
+body.modality-nails .form-agendamento textarea:focus {
+  border-color: var(--accent-nails);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--accent-barbeiro);
+  color: #0f0f0f;
+  margin-top: 0.25rem;
+}
+
+body.modality-nails .btn-primary {
+  background: var(--accent-nails);
+  color: #fff;
+}
+
+/* Alerts */
+.alert {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.alert-error {
+  background: rgba(199, 92, 92, 0.15);
+  border: 1px solid var(--error);
+  color: #f0b0b0;
+}
+
+.alert-success {
+  background: rgba(74, 155, 111, 0.15);
+  border: 1px solid var(--success);
+  color: #8bc4a8;
+}
+
+/* Card resumo do agendamento */
+.card-resumo-agendamento {
+  margin-bottom: 1.5rem;
+  border-color: rgba(74, 155, 111, 0.4);
+  background: rgba(74, 155, 111, 0.06);
+}
+
+.card-resumo-agendamento h2 {
+  color: var(--success);
+  margin-bottom: 1rem;
+}
+
+.resumo-lista {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.resumo-lista dt {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.resumo-lista dd {
+  margin: 0;
+}
+
+/* Lists */
+.agendamentos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.agendamento-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agendamento-item:last-child {
+  border-bottom: none;
+}
+
+.agendamento-data {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  flex: 0 0 100%;
+}
+
+.agendamento-pagamento {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.status-pendente { background: rgba(201, 162, 39, 0.25); color: var(--accent-barbeiro); }
+.status-confirmado { background: rgba(74, 155, 111, 0.25); color: var(--success); }
+.status-realizado { background: var(--border); color: var(--text-muted); }
+.status-cancelado { background: rgba(199, 92, 92, 0.25); color: var(--error); }
+.status-no_show { background: rgba(199, 92, 92, 0.2); color: #e09090; }
+
+.empty-msg {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.servicos-box {
+  margin-top: 0.5rem;
+}
+
+.servicos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
+.servicos-list li {
+  padding: 0.4rem 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0;
+  margin-top: auto;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Admin: layout com sidebar lateral */
+.main-content:has(.admin-layout) {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.admin-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.admin-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.admin-nav-item {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+
+.admin-nav-item:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.admin-nav-item.active {
+  color: var(--accent-barbeiro);
+  border-right: 3px solid var(--accent-barbeiro);
+  background: var(--accent-barbeiro-soft);
+}
+
+.admin-sidebar-user {
+  margin: 1rem 1.25rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.admin-nav-sair {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.admin-main {
+  flex: 1;
+  overflow: auto;
+  padding: 2rem 0 4rem;
+}
+
+.admin-main .container {
+  max-width: 1100px;
+}

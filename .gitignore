@@ -1,0 +1,28 @@
+# PHP
+/vendor/
+composer.lock
+*.php.bak
+
+# Config local (senha do banco – use database.example.php como base)
+config/database.php
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs e cache
+*.log
+/logs/
+/cache/
+
+# Uploads (se houver)
+/uploads/
