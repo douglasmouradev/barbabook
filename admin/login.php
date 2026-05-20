@@ -87,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
     }
+    }
 }
 
 require __DIR__ . '/../includes/header.php';

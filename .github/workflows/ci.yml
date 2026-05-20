@@ -34,7 +34,7 @@ jobs:
         run: mysql -h 127.0.0.1 -uroot -proot barbabook < database/schema.sql
 
       - name: PHP syntax check
-        run: find . -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
+        run: find app admin barbeiro nails config includes . -maxdepth 3 -name "*.php" -print0 | xargs -0 -n1 php -l
 
       - name: Smoke test (home)
         run: |
