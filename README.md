@@ -1,6 +1,28 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.2-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP"/>
+  <img src="https://img.shields.io/badge/MySQL-8-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL"/>
+  <img src="https://img.shields.io/badge/Agendamento-Online-0ea5e9?style=flat-square" alt="Agendamento"/>
+</p>
+
+<h1 align="center">BarbaBook</h1>
+
+<p align="center">
+  <strong>Agendamento online para barbearia e nail design</strong> — módulos Barbeiro e Nails, painel admin e suporte multibeneficiário.
+</p>
+
+<p align="center">
+  <a href="https://portifolio-douglas-moura.vercel.app">Portfólio</a> ·
+  <a href="https://github.com/douglasmouradev/barbabook">Repositório</a> ·
+  <a href="https://wa.me/5571997087082?text=Ol%C3%A1%20Douglas%2C%20tenho%20interesse%20no%20BarbaBook.">Solicitar implantação</a>
+</p>
+
+---
+
 # BarbaBook
 
 Sistema de agendamento para **barbeiros** e **nail design**, desenvolvido para **tdesksolutions.com.br**.
+
+## Destaques
 
 - **PHP 8.2+** com PDO e MySQL 8
 - Página inicial: escolha entre **Barbeiro** ou **Nails**
